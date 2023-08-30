@@ -41,9 +41,10 @@ int main(void) {
   GPIOB->PUPDR = (GPIOB->PUPDR & ~(GPIO_PUPDR_PUPD3)) |(GPIO_PUPDR_PUPD3_0);
   //Enable pull down for PB7
   GPIOB->PUPDR = (GPIOB->PUPDR & ~(GPIO_PUPDR_PUPD7)) |(GPIO_PUPDR_PUPD7_1);
-  //
+  //FLAGGOR FÖR ATT TOGGLA LEDS
   uint8_t btn_1_flg = 0;
   uint8_t btn_0_flg = 0;
+  //SÄTT HÖG SÅ ATT LED SOM GÅR FRÅN PA4 till VCC är släckt
   GPIOA->BSRR = GPIO_BSRR_BS_4;
 
   while(1){
@@ -51,7 +52,7 @@ int main(void) {
    
 
     delay_systicks(0x00100000);
-    
+    //Kolla om knapp 1 är nedtryckt, kopplad mot jord
     if(GPIOB->IDR == 0)
     {
       if(btn_1_flg)
@@ -65,7 +66,7 @@ int main(void) {
         btn_1_flg = 1;
       }
     }
-
+    //Kolla om knapp 0 är nedtryckt, pullupp på PORT 3 samt koppling till VCC på PORT7 bör läsas in
     else if ((GPIOB->IDR & GPIO_IDR_ID7) && (GPIOB->IDR & GPIO_IDR_ID3))
     {
       if(btn_0_flg)
@@ -79,7 +80,7 @@ int main(void) {
         btn_0_flg = 1;
       }
     }
-
+    //Kolla om båda knapparna är nedtryckta, kortslutet mot jord på port 3 och mot vcc på port 7
      else if (GPIOB->IDR & GPIO_IDR_ID7)
     {
       if(btn_1_flg)
@@ -95,7 +96,7 @@ int main(void) {
         btn_1_flg = 1;
       }
     }
-
+    //Släck båda lamporna om inget är nedtryckt
     else
     {
      GPIOA->BSRR = GPIO_BSRR_BS_4;
