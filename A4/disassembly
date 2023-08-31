@@ -1,0 +1,441 @@
+    9B05        ldr r3, [sp, #20]
+    0018        movs r0, r3
+    F000FD91    bl 0x08000E5C <_WriteNoCheck>
+--- SEGGER_RTT.c -- 1118 -----------------------------------
+} else {
+Status = NumBytes;
+_WriteNoCheck(pRing, pData, NumBytes);
+}
+break;
+    E01E        b 0x0800037A
+--- SEGGER_RTT.c -- 1123 -----------------------------------
+case SEGGER_RTT_MODE_NO_BLOCK_TRIM:
+//
+// If we are in trim mode, trim to what we can output without blocking.
+//
+Avail = _GetAvailWriteSpace(pRing);
+    9B05        ldr r3, [sp, #20]
+    0018        movs r0, r3
+    F000FDD0    bl 0x08000EE4 <_GetAvailWriteSpace>
+    0003        movs r3, r0
+    9304        str r3, [sp, #16]
+--- SEGGER_RTT.c -- 1128 -----------------------------------
+Status = Avail < NumBytes ? Avail : NumBytes;
+    9A04        ldr r2, [sp, #16]
+    9B01        ldr r3, [sp, #4]
+    4293        cmp r3, r2
+    D900        bls 0x08000352
+    0013        movs r3, r2
+    9307        str r3, [sp, #28]
+--- SEGGER_RTT.c -- 1129 -----------------------------------
+_WriteNoCheck(pRing, pData, Status);
+    9A07        ldr r2, [sp, #28]
+    9906        ldr r1, [sp, #24]
+    9B05        ldr r3, [sp, #20]
+    0018        movs r0, r3
+    F000FD7E    bl 0x08000E5C <_WriteNoCheck>
+--- SEGGER_RTT.c -- 1130 -----------------------------------
+break;
+    E00B        b 0x0800037A
+--- SEGGER_RTT.c -- 1131 -----------------------------------
+case SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL:
+//
+// If we are in blocking mode, output everything.
+//
+Status = _WriteBlocking(pRing, pData, NumBytes);
+    9A01        ldr r2, [sp, #4]
+    9906        ldr r1, [sp, #24]
+    9B05        ldr r3, [sp, #20]
+    0018        movs r0, r3
+    F000FD1D    bl 0x08000DA8 <_WriteBlocking>
+    0003        movs r3, r0
+    9307        str r3, [sp, #28]
+--- SEGGER_RTT.c -- 1136 -----------------------------------
+break;
+    E002        b 0x0800037A
+--- SEGGER_RTT.c -- 1137 -----------------------------------
+default:
+Status = 0u;
+    2300        movs r3, #0
+    9307        str r3, [sp, #28]
+--- SEGGER_RTT.c -- 1139 -----------------------------------
+break;
+    46C0        nop
+--- SEGGER_RTT.c -- 1140 -----------------------------------
+}
+//
+// Finish up.
+//
+return Status;
+    9B07        ldr r3, [sp, #28]
+--- SEGGER_RTT.c -- 1145 -----------------------------------
+}
+    0018        movs r0, r3
+    B009        add sp, sp, #0x24
+    BD00        pop {pc}
+    46C0        nop
+    20000400    .word 0x20000400
+--- SEGGER_RTT.c -- 1197 -----------------------------------
+*
+* Notes
+* (1) Data is stored according to buffer flags.
+*/
+unsigned SEGGER_RTT_Write(unsigned BufferIndex, const void* pBuffer, unsigned NumBytes) {
+    B500        push {lr}
+    B089        sub sp, sp, #0x24
+    9003        str r0, [sp, #12]
+    9102        str r1, [sp, #8]
+    9201        str r2, [sp, #4]
+--- SEGGER_RTT.c -- 1202 -----------------------------------
+unsigned Status;
+INIT();
+    4B0F        ldr r3, =0x20000400 <_SEGGER_RTT>
+    9307        str r3, [sp, #28]
+    9B07        ldr r3, [sp, #28]
+    781B        ldrb r3, [r3]
+    B2DB        uxtb r3, r3
+    2B00        cmp r3, #0
+    D101        bne 0x080003A4
+    F7FFFF4C    bl 0x0800023C <_DoInit>
+--- SEGGER_RTT.c -- 1205 -----------------------------------
+SEGGER_RTT_LOCK();
+    F3EF8310    mrs r3, primask
+    2101        movs r1, #1
+    F3818810    msr primask, r1
+    9306        str r3, [sp, #24]
+--- SEGGER_RTT.c -- 1206 -----------------------------------
+Status = SEGGER_RTT_WriteNoLock(BufferIndex, pBuffer, NumBytes); // Call the non-locking write function
+    9A01        ldr r2, [sp, #4]
+    9902        ldr r1, [sp, #8]
+    9B03        ldr r3, [sp, #12]
+    0018        movs r0, r3
+    F7FFFF90    bl 0x080002DC <SEGGER_RTT_WriteNoLock>
+    0003        movs r3, r0
+    9305        str r3, [sp, #20]
+--- SEGGER_RTT.c -- 1207 -----------------------------------
+SEGGER_RTT_UNLOCK();
+    9B06        ldr r3, [sp, #24]
+    F3838810    msr primask, r3
+--- SEGGER_RTT.c -- 1208 -----------------------------------
+return Status;
+    9B05        ldr r3, [sp, #20]
+--- SEGGER_RTT.c -- 1209 -----------------------------------
+}
+    0018        movs r0, r3
+    B009        add sp, sp, #0x24
+    BD00        pop {pc}
+    46C0        nop
+    20000400    .word 0x20000400
+--- main.c -- 10 -------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include "stm32l0xx.h"
+void uart_tx(uint8_t txdata){
+    B082        sub sp, sp, #8
+    0002        movs r2, r0
+    466B        mov r3, sp
+    3307        adds r3, #7
+    701A        strb r2, [r3]
+--- main.c -- 15 -------------------------------------------
+while(!(USART1->ISR & USART_ISR_TXE)); // wait
+    46C0        nop
+    4B06        ldr r3, =0x40013800
+    69DB        ldr r3, [r3, #28]
+    2280        movs r2, #0x80
+    4013        ands r3, r2
+    D0FA        beq 0x080003E0
+--- main.c -- 16 -------------------------------------------
+USART1->TDR = txdata; // send
+    4B04        ldr r3, =0x40013800
+    466A        mov r2, sp
+    3207        adds r2, #7
+    7812        ldrb r2, [r2]
+    629A        str r2, [r3, #0x28]
+--- main.c -- 17 -------------------------------------------
+}
+    46C0        nop
+    B002        add sp, sp, #8
+    4770        bx lr
+    46C0        nop
+    40013800    .word 0x40013800
+--- main.c -- 18 -------------------------------------------
+void delay_systicks(uint32_t ticks);
+// Busy-wait delay using SysTick timer.
+// Based on Yiu-book, ch. 9.5 "The SysTick Timer"
+    B082        sub sp, sp, #8
+    9001        str r0, [sp, #4]
+--- main.c -- 23 -------------------------------------------
+    4B0C        ldr r3, =0xE000E010
+    2200        movs r2, #0
+    601A        str r2, [r3]
+--- main.c -- 24 -------------------------------------------
+int main(void) {
+    4B0B        ldr r3, =0xE000E010
+    9A01        ldr r2, [sp, #4]
+    3A01        subs r2, #1
+    605A        str r2, [r3, #4]
+--- main.c -- 25 -------------------------------------------
+//ENABLA KLOCKOR
+RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+    4B09        ldr r3, =0xE000E010
+    2200        movs r2, #0
+    609A        str r2, [r3, #8]
+--- main.c -- 27 -------------------------------------------
+RCC->IOPENR |= RCC_IOPENR_GPIOAEN;
+RCC ->IOPENR |= RCC_IOPENR_GPIOBEN;
+    4B07        ldr r3, =0xE000E010
+    2205        movs r2, #5
+    601A        str r2, [r3]
+--- main.c -- 29 -------------------------------------------
+//NOLLA PINNE 6 och 7 i AFR för alternate mode 1
+GPIOB->AFR[0] = (GPIOB->AFR[0] & ~(0xF0000000));
+    46C0        nop
+    4B05        ldr r3, =0xE000E010
+    681A        ldr r2, [r3]
+    2380        movs r3, #0x80
+    025B        lsls r3, r3, #9
+    4013        ands r3, r2
+    D0F9        beq 0x08000420
+--- main.c -- 31 -------------------------------------------
+GPIOB->AFR[0] = (GPIOB->AFR[0] & ~(0xF000000));
+//SÄTT ALTERNATE FUNCTION PÅ PINNE 42/43 PB6/PB7
+GPIOB->MODER = (GPIOB->MODER & ~(GPIO_MODER_MODE6)) | (GPIO_MODER_MODE6);
+    4B02        ldr r3, =0xE000E010
+    2200        movs r2, #0
+    601A        str r2, [r3]
+--- main.c -- 34 -------------------------------------------
+GPIOB->MODER = (GPIOB->MODER & ~(GPIO_MODER_MODE7)) | (GPIO_MODER_MODE7);
+    46C0        nop
+    B002        add sp, sp, #8
+    4770        bx lr
+    E000E010    .word 0xE000E010
+--- main.c -- 35 -------------------------------------------
+//SÄTT KLOCKA
+USART1->BRR = SystemCoreClock / 9600;
+    B510        push {r4, lr}
+--- main.c -- 37 -------------------------------------------
+USART1->CR1 |= USART_CR1_TE | USART_CR1_RE | USART_CR1_UE;
+    4B25        ldr r3, =0x40021000
+    6B5A        ldr r2, [r3, #0x34]
+    4B24        ldr r3, =0x40021000
+    2180        movs r1, #0x80
+    01C9        lsls r1, r1, #7
+    430A        orrs r2, r1
+    635A        str r2, [r3, #0x34]
+--- main.c -- 39 -------------------------------------------
+    4B21        ldr r3, =0x40021000
+    6ADA        ldr r2, [r3, #0x2C]
+    4B20        ldr r3, =0x40021000
+    2101        movs r1, #1
+    430A        orrs r2, r1
+    62DA        str r2, [r3, #0x2C]
+--- main.c -- 40 -------------------------------------------
+while(1)
+    4B1E        ldr r3, =0x40021000
+    6ADA        ldr r2, [r3, #0x2C]
+    4B1D        ldr r3, =0x40021000
+    2102        movs r1, #2
+    430A        orrs r2, r1
+    62DA        str r2, [r3, #0x2C]
+--- main.c -- 41 -------------------------------------------
+{
+    4B1C        ldr r3, =0x50000400
+    6A1A        ldr r2, [r3, #32]
+    4B1B        ldr r3, =0x50000400
+    0112        lsls r2, r2, #4
+    0912        lsrs r2, r2, #4
+    621A        str r2, [r3, #32]
+--- main.c -- 43 -------------------------------------------
+uart_tx(0x01);
+    4B19        ldr r3, =0x50000400
+    6A1A        ldr r2, [r3, #32]
+    4B18        ldr r3, =0x50000400
+    4919        ldr r1, =0xF0FFFFFF
+    400A        ands r2, r1
+    621A        str r2, [r3, #32]
+--- main.c -- 44 -------------------------------------------
+printf("test");
+delay_systicks(SystemCoreClock);
+    4B16        ldr r3, =0x50000400
+    681A        ldr r2, [r3]
+    4B15        ldr r3, =0x50000400
+    21C0        movs r1, #0xC0
+    0189        lsls r1, r1, #6
+    430A        orrs r2, r1
+    601A        str r2, [r3]
+--- main.c -- 46 -------------------------------------------
+}
+    4B13        ldr r3, =0x50000400
+    681A        ldr r2, [r3]
+    4B12        ldr r3, =0x50000400
+    21C0        movs r1, #0xC0
+    0209        lsls r1, r1, #8
+    430A        orrs r2, r1
+    601A        str r2, [r3]
+--- main.c -- 47 -------------------------------------------
+}
+    4B11        ldr r3, =0x200004E8 <SystemCoreClock>
+    681B        ldr r3, [r3]
+    4C11        ldr r4, =0x40013800
+    2296        movs r2, #0x96
+    0191        lsls r1, r2, #6
+    0018        movs r0, r3
+    F000F8C6    bl 0x08000634 <__aeabi_uidiv>
+    0003        movs r3, r0
+    60E3        str r3, [r4, #12]
+--- main.c -- 49 -------------------------------------------
+// Busy-wait delay using SysTick timer.
+    4B0D        ldr r3, =0x40013800
+    681A        ldr r2, [r3]
+    4B0C        ldr r3, =0x40013800
+    210D        movs r1, #13
+    430A        orrs r2, r1
+    601A        str r2, [r3]
+--- main.c -- 51 -------------------------------------------
+void delay_systicks(uint32_t ticks) {
+SysTick->CTRL = 0; // disable systick
+SysTick->LOAD = ticks - 1; // count from (ticks-1) to 0
+// (i.e. ticks cycles)
+SysTick->VAL = 0; // clear current value and
+    2001        movs r0, #1
+    F7FFFF8B    bl 0x080003D4 <uart_tx>
+--- main.c -- 56 -------------------------------------------
+// count flag
+    4B0A        ldr r3, =0x08000C4C
+    0018        movs r0, r3
+    F000F96B    bl 0x0800079C <printf>
+--- main.c -- 57 -------------------------------------------
+SysTick->CTRL = (1 << 2) | (1 << 0); // enable systick timer
+    4B06        ldr r3, =0x200004E8 <SystemCoreClock>
+    681B        ldr r3, [r3]
+    0018        movs r0, r3
+    F7FFFF98    bl 0x08000400 <delay_systicks>
+--- main.c -- 55 -------------------------------------------
+SysTick->VAL = 0; // clear current value and
+    E7F2        b 0x080004B8
+    46C0        nop
+    40021000    .word 0x40021000
+    50000400    .word 0x50000400
+    F0FFFFFF    .word 0xF0FFFFFF
+    200004E8    .word 0x200004E8
+    40013800    .word 0x40013800
+    08000C4C    .word 0x08000C4C
+--- SEGGER_THUMB_Startup.s -- 165 --------------------------
+// * Perform segment init
+// * Perform heap init (if used)
+// * Call constructors of global Objects (if any exist)
+//
+ldr R4, =__SEGGER_init_table__ // Set table pointer to start of initialization table
+    4C03        ldr r4, =0x08001108 <__SEGGER_init_table__>
+--- SEGGER_THUMB_Startup.s -- 170 --------------------------
+L(RunInit):
+ldr R0, [R4] // Get next initialization function from table
+    6820        ldr r0, [r4]
+--- SEGGER_THUMB_Startup.s -- 172 --------------------------
+adds R4, R4, #4 // Increment table pointer to point to function arguments
+    3404        adds r4, #4
+--- SEGGER_THUMB_Startup.s -- 173 --------------------------
+blx R0 // Call initialization function
+    4780        blx r0
+--- SEGGER_THUMB_Startup.s -- 174 --------------------------
+b L(RunInit)
+    E7FB        b 0x080004EE
+--- SEGGER_THUMB_Startup.s -- 183 --------------------------
+// In a real embedded application ("Free-standing environment"),
+// main() does not get any arguments,
+// which means it is not necessary to init R0 and R1.
+//
+bl APP_ENTRY_POINT // Call to application entry point (usually main())
+    F7FFFFA1    bl 0x0800043C <main>
+--- SEGGER_THUMB_Startup.s -- 195 --------------------------
+//
+// In a free-standing environment, if returned from application:
+// Loop forever.
+//
+b .
+    E7FE        b 0x080004FA <exit>
+--- SEGGER_THUMB_Startup.s -- 169 --------------------------
+ldr R4, =__SEGGER_init_table__ // Set table pointer to start of initialization table
+    08001108    .word 0x08001108
+--- STM32L0xx_Startup.s -- 216 -----------------------------
+HardFault_Handler:
+//
+// Check if HardFault is caused by BKPT instruction
+//
+ldr R1, =0xE000ED2C // Load NVIC_HFSR
+    490A        ldr r1, =0xE000ED2C
+--- STM32L0xx_Startup.s -- 221 -----------------------------
+ldr R2, [R1]
+    680A        ldr r2, [r1]
+--- STM32L0xx_Startup.s -- 222 -----------------------------
+cmp R2, #0 // Check NVIC_HFSR[31]
+    2A00        cmp r2, #0
+--- STM32L0xx_Startup.s -- 223 -----------------------------
+L(hfLoop):
+bmi L(hfLoop) // Not set? Stay in HardFault Handler.
+    D4FE        bmi 0x08000506
+--- STM32L0xx_Startup.s -- 226 -----------------------------
+//
+// Continue execution after BKPT instruction
+//
+#if defined(__thumb__) && !defined(__thumb2__)
+movs R0, #4
+    2004        movs r0, #4
+--- STM32L0xx_Startup.s -- 231 -----------------------------
+mov R1, LR
+    4671        mov r1, lr
+--- STM32L0xx_Startup.s -- 232 -----------------------------
+tst R0, R1 // Check EXC_RETURN in Link register bit 2.
+    4208        tst r0, r1
+--- STM32L0xx_Startup.s -- 233 -----------------------------
+bne L(Uses_PSP)
+    D102        bne 0x08000516
+--- STM32L0xx_Startup.s -- 234 -----------------------------
+mrs R0, MSP // Stacking was using MSP.
+    F3EF8008    mrs r0, msp
+--- STM32L0xx_Startup.s -- 235 -----------------------------
+b L(Pass_StackPtr)
+    E001        b 0x0800051A
+--- STM32L0xx_Startup.s -- 236 -----------------------------
+L(Uses_PSP):
+mrs R0, PSP // Stacking was using PSP.
+    F3EF8009    mrs r0, psp
+--- STM32L0xx_Startup.s -- 245 -----------------------------
+//
+// Reset HardFault Status
+//
+#if defined(__thumb__) && !defined(__thumb2__)
+movs R3, #1
+    2301        movs r3, #1
+--- STM32L0xx_Startup.s -- 250 -----------------------------
+lsls R3, R3, #31
+    07DB        lsls r3, r3, #31
+--- STM32L0xx_Startup.s -- 251 -----------------------------
+orrs R2, R3
+    431A        orrs r2, r3
+--- STM32L0xx_Startup.s -- 252 -----------------------------
+str R2, [R1]
+    600A        str r2, [r1]
+--- STM32L0xx_Startup.s -- 256 -----------------------------
+#endif
+//
+// Adjust return address
+//
+ldr R1, [R0, #24] // Get stored PC from stack
+    6981        ldr r1, [r0, #24]
+--- STM32L0xx_Startup.s -- 261 -----------------------------
+adds R1, #2 // Adjust PC by 2 to skip current BKPT
+    3102        adds r1, #2
+--- STM32L0xx_Startup.s -- 262 -----------------------------
+str R1, [R0, #24] // Write back adjusted PC to stack
+    6181        str r1, [r0, #24]
+--- STM32L0xx_Startup.s -- 263 -----------------------------
+//
+bx LR // Return
+    4770        bx lr
+    0000        .short 0x0000
+--- STM32L0xx_Startup.s -- 220 -----------------------------
+ldr R1, =0xE000ED2C // Load NVIC_HFSR
+    E000ED2C    .word 0xE000ED2C
+<__SEGGER_RTL_current_locale>
+    4903        ldr r1, =0x200004C4 <__SEGGER_RTL_locale_ptr>

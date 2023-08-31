@@ -1,7 +1,7 @@
 Output/Debug/Obj/A4/system_stm32l0xx.o: \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/STM32L0xx/Device/Source/system_stm32l0xx.c \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/STM32L0xx/Device/Include/stm32l0xx.h \
- /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/STM32L0xx/Device/Include/stm32l010x6.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/STM32L0xx/Device/Include/stm32l053xx.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/CMSIS_5/CMSIS/Core/Include/core_cm0plus.h \
  /usr/share/segger_embedded_studio_for_arm_7.30/include/stdint.h \
  /usr/share/segger_embedded_studio_for_arm_7.30/include/__SEGGER_RTL.h \
@@ -11,4 +11,5 @@ Output/Debug/Obj/A4/system_stm32l0xx.o: \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/CMSIS_5/CMSIS/Core/Include/cmsis_version.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/CMSIS_5/CMSIS/Core/Include/mpu_armv7.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/A4/STM32L0xx/Device/Include/system_stm32l0xx.h

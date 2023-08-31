@@ -65,7 +65,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="111" useTextEdit="1" path="main.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="19" y="23" useTextEdit="1" path="main.c" left="0" selected="1" top="74" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="8" y="1947" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/A3/main.c" path="STM32L0xx/Device/Include/stm32l010x6.h" left="0" top="1927" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="A3" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
