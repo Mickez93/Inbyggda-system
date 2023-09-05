@@ -89,10 +89,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="107" useTextEdit="1" path="B6/Core/Src/main.c" left="0" selected="1" top="82" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="438" useTextEdit="1" path="B6/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.c" left="0" top="407" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="250" useTextEdit="1" path="Output/Debug/Obj/B6/main.asm" left="0" top="219" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="92" useTextEdit="1" path="B6/Core/Src/stm32l0xx_it.c" left="0" top="30" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="40" y="98" useTextEdit="1" path="B6/Core/Src/main.c" left="0" selected="1" top="78" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="438" useTextEdit="1" path="B6/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.c" left="0" top="398" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="92" useTextEdit="1" path="B6/Core/Src/stm32l0xx_it.c" left="0" top="52" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="61" useTextEdit="1" path="B6/Core/Src/gpio.c" left="0" top="34" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="B6" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

@@ -32,4 +32,13 @@ Output/Debug/Obj/B6/stm32l0xx_hal_msp.o: \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h \
- /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B6/B6/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h

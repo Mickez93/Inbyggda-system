@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "gpio.h"
-#include "stm32l0xx.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -95,7 +94,11 @@ int main(void)
   while (1)
   { 
     /// A3 Egen toggling
-    GPIOA->ODR ^= (1 << 5); 
+    //GPIOA->ODR ^= (1 << 5);
+    LL_GPIO_SetOutputPin(GPIOA,GPIO_PIN_5);
+    LL_GPIO_ResetOutputPin(GPIOA,GPIO_PIN_5);
+    //LL_GPIO_TogglePin(GPIOA,GPIO_PIN_5);
+    //HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_5); 
     ///
               
     // HAL TOggling
