@@ -35,6 +35,8 @@ Output/Debug/Obj/B7/main.o: \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h \
@@ -42,6 +44,8 @@ Output/Debug/Obj/B7/main.o: \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd_ex.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Core/Inc/adc.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Core/Inc/main.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Core/Inc/dma.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Core/Inc/tim.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Core/Inc/usart.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/USB_DEVICE/App/usb_device.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \

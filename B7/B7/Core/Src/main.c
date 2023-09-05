@@ -19,6 +19,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
+#include "tim.h"
 #include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
@@ -57,8 +59,9 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint32_t adc2_raw[2];
-uint8_t adc_index = 0;
+uint8_t aResultDMA[2] = {5,10};
+volatile uint8_t debounce = 0;
+
 
 /* USER CODE END 0 */
 
@@ -90,33 +93,28 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USB_DEVICE_Init();
   MX_ADC_Init();
   MX_USART1_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_IT(&hadc);
-   
+  
+  if (HAL_ADC_Start_DMA(&hadc, (uint32_t*)aResultDMA, 2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  
+  uint8_t test; 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {   
-      
-      uint8_t test2;
 
-       
-      test2 = (uint8_t)adc2_raw[0];
-      HAL_UART_Transmit(&huart1,&adc2_raw[0],1,HAL_MAX_DELAY);
-      test2 = (uint8_t)adc2_raw[1];
-      HAL_UART_Transmit(&huart1,&adc2_raw[1],1,HAL_MAX_DELAY);
-       
-          
-      
-    
-      HAL_ADC_Start_IT(&hadc);
-      HAL_Delay(1000);
-      
+    //test = (uint8_t)aResultDMA[0];
+    //HAL_UART_Transmit(&huart1,&aResultDMA[0],1,HAL_MAX_DELAY);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -141,8 +139,10 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_24;
@@ -176,21 +176,31 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  /* Prevent unused argument(s) compilation warning */
-  //UNUSED(hadc);
- 
-  if(hadc->Instance == ADC1){
-	  if(adc_index == 0){
-		  adc2_raw[0] = HAL_ADC_GetValue(&hadc);
-		  ++adc_index;
-	  }else {
-		  adc2_raw[1] = HAL_ADC_GetValue(&hadc);
-		  adc_index = 0;
-	}
+  if(GPIO_Pin == GPIO_PIN_5)
+  { 
+    if(debounce == 0)
+    { 
+      debounce = 1;
+      HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_4);
+      //Enablar 100 ms debounce
+      HAL_TIM_Base_Start_IT(&htim2);
+    }
+   
   }
 }
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
+{ 
+  debounce--;
+  if(debounce == 0)
+  { //Stäng av debounce
+    HAL_TIM_Base_Stop_IT(&htim2);
+  }
+}
+
+
 /* USER CODE END 4 */
 
 /**
