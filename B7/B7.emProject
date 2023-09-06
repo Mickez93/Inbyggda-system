@@ -33,7 +33,7 @@
       arm_target_device_name="STM32L053C8"
       arm_target_interface_type="SWD"
       c_preprocessor_definitions="ARM_MATH_CM0PLUS;STM32L053xx;__STM32L053_SUBFAMILY;__STM32L0XX_FAMILY;__NO_FPU_ENABLE"
-      c_user_include_directories="$(ProjectDir)/CMSIS_5/CMSIS/Core/Include;$(ProjectDir)/B7/Core/Inc;$(ProjectDir)/B7/Drivers/STM32L0xx_HAL_Driver/Inc;$(ProjectDir)/B7/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy;$(ProjectDir)/B7/Drivers/CMSIS/Device/ST/STM32L0xx/Include;$(ProjectDir)/B7/Drivers/CMSIS/Include;$(ProjectDir)/B7/USB_DEVICE/App;$(ProjectDir)/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;$(ProjectDir)/B7/USB_DEVICE/Target;$(ProjectDir)/B7/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc"
+      c_user_include_directories="$(ProjectDir)/CMSIS_5/CMSIS/Core/Include;$(ProjectDir)/B7/Core/Inc;$(ProjectDir)/B7/Drivers/STM32L0xx_HAL_Driver/Inc;$(ProjectDir)/B7/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy;$(ProjectDir)/B7/Drivers/CMSIS/Device/ST/STM32L0xx/Include;$(ProjectDir)/B7/Drivers/CMSIS/Include;$(ProjectDir)/B7/USB_DEVICE/App;$(ProjectDir)/B7/USB_DEVICE/Target;$(ProjectDir)/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc;$(ProjectDir)/B7/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc"
       debug_register_definition_file="$(ProjectDir)/STM32L0x3_Registers.xml"
       debug_stack_pointer_start="__stack_end__"
       debug_start_from_entry_point_symbol="Yes"

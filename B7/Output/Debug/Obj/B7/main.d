@@ -53,4 +53,10 @@ Output/Debug/Obj/B7/main.o: \
  /usr/share/segger_embedded_studio_for_arm_7.30/include/stdio.h \
  /usr/share/segger_embedded_studio_for_arm_7.30/include/stdlib.h \
  /usr/share/segger_embedded_studio_for_arm_7.30/include/string.h \
- /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Core/Inc/gpio.h
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Core/Inc/gpio.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h

@@ -27,7 +27,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "usbd_hid.h"
+extern USBD_HandleTypeDef hUsbDeviceFS;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,6 +54,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+int8_t pos(uint8_t aResultDMA);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -61,6 +63,8 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 uint8_t aResultDMA[2] = {5,10};
 volatile uint8_t debounce = 0;
+uint8_t usb_buffer[4];
+volatile uint8_t clk_flg = 0;
 
 
 /* USER CODE END 0 */
@@ -72,7 +76,10 @@ volatile uint8_t debounce = 0;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  usb_buffer[0]= 0x00;
+  usb_buffer[1] = 0x00;
+  usb_buffer[2] = 0x00;
+  usb_buffer[3] = 0x00;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -100,6 +107,7 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   
+  
   if (HAL_ADC_Start_DMA(&hadc, (uint32_t*)aResultDMA, 2) != HAL_OK)
   {
     Error_Handler();
@@ -111,8 +119,18 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {   
-
+{  
+    usb_buffer[1] = pos(aResultDMA[0]);
+    usb_buffer[2] = pos(aResultDMA[1]);
+    if(clk_flg)
+    {
+      usb_buffer[0] = 0b00000001;
+      clk_flg = 0;
+    }
+    
+    USBD_HID_SendReport(&hUsbDeviceFS,usb_buffer,4);
+    usb_buffer[0] = 0b00000000;
+    HAL_Delay(10);
     //test = (uint8_t)aResultDMA[0];
     //HAL_UART_Transmit(&huart1,&aResultDMA[0],1,HAL_MAX_DELAY);
     /* USER CODE END WHILE */
@@ -176,6 +194,54 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+
+int8_t pos(uint8_t aResultDMA)
+{
+  int8_t position;
+
+  if(aResultDMA > 0x83)
+  {
+    
+    if(aResultDMA < 0xA0)
+    {
+      position = 0b00000001;
+    }
+    else if (aResultDMA < 0xC0)
+    {
+      position = 0b00000010;
+    }
+    else
+    {
+      position = 0b00001000;
+    }
+    
+    
+  }
+  else if(aResultDMA < 0x7d)
+  { 
+    if(aResultDMA > 0x7c)
+    {
+       position = 0b11111110;;
+    }
+    else if (aResultDMA > 0x4d)
+    {
+       position = 0b11111101;
+    }
+    else
+    {
+       position = 0b11110111;
+    }
+    
+  }
+  else
+  {
+    position = 0;
+  }
+  
+  return position;
+}
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if(GPIO_Pin == GPIO_PIN_5)
@@ -184,6 +250,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     { 
       debounce = 1;
       HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_4);
+      clk_flg = 1;
       //Enablar 100 ms debounce
       HAL_TIM_Base_Start_IT(&htim2);
     }

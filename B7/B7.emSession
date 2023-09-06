@@ -1,7 +1,7 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
  <Bookmarks/>
- <Breakpoints groups="V6M Exceptions;Breakpoints" active_group="Breakpoints">
+ <Breakpoints groups="Breakpoints;V6M Exceptions" active_group="Breakpoints">
   <Exceptions set="HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
@@ -56,11 +56,13 @@
   <ProjectSessionItem path="B7;B7;B7;Middlewares;ST;STM32_USB_Device_Library"/>
   <ProjectSessionItem path="B7;B7;B7;Middlewares;ST;STM32_USB_Device_Library;Class"/>
   <ProjectSessionItem path="B7;B7;B7;Middlewares;ST;STM32_USB_Device_Library;Class;HID"/>
+  <ProjectSessionItem path="B7;B7;B7;Middlewares;ST;STM32_USB_Device_Library;Class;HID;Inc"/>
   <ProjectSessionItem path="B7;B7;B7;Middlewares;ST;STM32_USB_Device_Library;Class;HID;Src"/>
   <ProjectSessionItem path="B7;B7;B7;Middlewares;ST;STM32_USB_Device_Library;Core"/>
   <ProjectSessionItem path="B7;B7;B7;Middlewares;ST;STM32_USB_Device_Library;Core;Inc"/>
   <ProjectSessionItem path="B7;B7;B7;USB_DEVICE"/>
   <ProjectSessionItem path="B7;B7;B7;USB_DEVICE;App"/>
+  <ProjectSessionItem path="B7;B7;B7;USB_DEVICE;Target"/>
   <ProjectSessionItem path="B7;B7;Source Files"/>
  </Project>
  <Register1>
@@ -99,9 +101,10 @@
  </TraceWindow>
  <Watch1>
   <Watches active="1" update="Twice a Second">
-   <Watchpoint expression="aResultDMA" name="aResultDMA" radix="-1" linenumber="116" filename="B7/Core/Src/main.c"/>
-   <Watchpoint expression="test" name="test" radix="-1" linenumber="116" filename="B7/Core/Src/main.c"/>
+   <Watchpoint expression="aResultDMA" name="aResultDMA" radix="-1" linenumber="134" filename="B7/Core/Src/main.c"/>
+   <Watchpoint expression="test" name="test" radix="-1" linenumber="134" filename="B7/Core/Src/main.c"/>
    <Watchpoint expression="tmp_hal_status" name="tmp_hal_status" radix="16" linenumber="1570" filename="B7/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc.c"/>
+   <Watchpoint expression="usb_buffer" name="usb_buffer" radix="-1" linenumber="135" filename="B7/Core/Src/main.c"/>
   </Watches>
  </Watch1>
  <Watch2>
@@ -114,22 +117,15 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="46" useTextEdit="1" path="B7/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" left="0" top="24" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="1569" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc.c" left="0" top="1540" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="1133" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h" left="0" top="1114" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="10" y="321" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc.c" path="B7/Core/Inc/stm32l0xx_hal_conf.h" left="0" top="289" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="3357" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.c" left="0" top="3339" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="197" useTextEdit="1" path="B7/Core/Src/main.c" left="0" selected="1" top="169" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="111" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Core/Src/adc.c" left="0" top="73" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="382" useTextEdit="1" path="B7/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.c" left="0" top="363" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="43" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Core/Src/dma.c" left="0" top="15" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="39" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="180" useTextEdit="1" path="B7/Core/Src/stm32l0xx_it.c" left="0" top="153" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="585" useTextEdit="1" path="B7/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_dma.c" left="0" top="567" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="288" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio.h" left="0" top="269" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="26" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Core/Src/tim.c" left="0" top="11" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="55" useTextEdit="1" path="B7/Core/Inc/stm32l0xx_it.h" left="0" top="24" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="32" y="3781" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/stm32l0xx_it.c" path="B7/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.c" left="0" top="3659" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="549" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" left="0" top="539" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="76" useTextEdit="1" folds0="71,111,147,272,277,288,296" path="B7/Core/Src/main.c" left="0" selected="1" top="53" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="12" y="42" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/USB_DEVICE/App/usb_device.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="120" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h" left="0" top="97" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Core/Src/main.c" path="B7/USB_DEVICE/App/usb_device.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="28" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/USB_DEVICE/App/usb_device.h" path="B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="60" useTextEdit="1" path="B7/Makefile" left="0" top="27" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="32" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h" path="B7/USB_DEVICE/Target/usbd_conf.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/B7/B7/USB_DEVICE/Target/usbd_conf.h" path="B7/Core/Inc/main.h" left="0" top="0" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="B7" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
