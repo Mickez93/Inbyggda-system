@@ -61,7 +61,7 @@ void Error_Handler(void);
 #define MCO_GPIO_Port GPIOA
 #define VCP_TX_Pin GPIO_PIN_2
 #define VCP_TX_GPIO_Port GPIOA
-#define SD_CS_Pin GPIO_PIN_4
+#define SD_CS_Pin GPIO_PIN_5
 #define SD_CS_GPIO_Port GPIOA
 #define SWDIO_Pin GPIO_PIN_13
 #define SWDIO_GPIO_Port GPIOA

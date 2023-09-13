@@ -25,6 +25,8 @@ Output/Debug/Obj/L4A1/main.o: \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h \
+  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac.h \
+  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac_ex.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h \
@@ -37,6 +39,7 @@ Output/Debug/Obj/L4A1/main.o: \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
+  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Core/Inc/dac.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Core/Inc/dma.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/FATFS/App/fatfs.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Middlewares/Third_Party/FatFs/src/ff.h \
@@ -49,4 +52,5 @@ Output/Debug/Obj/L4A1/main.o: \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Core/Inc/spi.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Core/Inc/tim.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Core/Inc/usart.h \
-  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Core/Inc/gpio.h
+  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Core/Inc/gpio.h \
+  /usr/share/segger_embedded_studio_for_arm_7.30/include/stdio.h

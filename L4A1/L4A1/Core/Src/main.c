@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dac.h"
 #include "dma.h"
 #include "fatfs.h"
 #include "spi.h"
@@ -27,7 +28,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,7 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define DMA_buffer 1024
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,18 +49,26 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+  uint8_t readBuf[DMA_buffer] = {0};
+  uint8_t testBuf[4096] = {0,0,0,0,0,0,0,0,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
+  FATFS FatFs; 	//Fatfs handle
+  FIL fil; 		//File handle
+  FRESULT fres; //Result after operations
+  uint8_t bufferState = 0;
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void SD_CARD_INIT(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-volatile uint8_t send_buffer[2] = {0b01010101,0b10101010};
+DWORD free_clusters, free_sectors, total_sectors;
+FATFS* getFreeFs;
+UINT read_chars = 1;
 /* USER CODE END 0 */
 
 /**
@@ -78,7 +87,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -95,19 +104,44 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM2_Init();
   MX_FATFS_Init();
+  MX_DAC1_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t asendDMA[2] = {0xFF,0xF0};
+  uint8_t asendDMA[6] = {0x0, 0x33, 0x66, 0x99, 0xCC, 0xFF};
+  
+  
+   //HAL_SPI_Transmit_DMA(&hspi1,(uint32_t *)&asendDMA, 2);
+  SD_CARD_INIT();
+  f_read (&fil, readBuf,DMA_buffer, &read_chars);
   HAL_TIM_OC_Start_IT(&htim2,TIM_CHANNEL_4);
-  uint8_t test = 32;
-  BYTE test2 = 0;
-   HAL_SPI_Transmit_DMA(&hspi1,(uint32_t *)&asendDMA, 2);
+  HAL_DAC_Start_DMA(&hdac1,DAC1_CHANNEL_1,(uint32_t *)readBuf, DMA_buffer,DAC_ALIGN_8B_R);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  { 
-   
+  {
+
+
+    if(bufferState == 1)
+	{
+		
+                f_read (&fil, &readBuf[0],DMA_buffer/2, &read_chars);
+		bufferState = 0;
+	}
+	if(bufferState == 2)
+	{
+		
+                f_read (&fil, &readBuf[DMA_buffer/2],DMA_buffer/2, &read_chars);
+		bufferState = 0;
+	}
+
+ 
+  
+
+  //Be a tidy kiwi - don't forget to close your file!
+  //f_close(&fil);
+    
     //HAL_SPI_Transmit(&hspi1,&test,1,HAL_MAX_DELAY);
     /* USER CODE END WHILE */
 
@@ -141,7 +175,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 1;
-  RCC_OscInitStruct.PLL.PLLN = 10;
+  RCC_OscInitStruct.PLL.PLLN = 9;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
@@ -166,11 +200,53 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
+
+
+void SD_CARD_INIT(void)
 {
-  HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_1);
+    
+    fres = f_mount(&FatFs, "", 1); //1=mount now
+    
+    if (fres != FR_OK) {
+	printf("f_mount error (%i)\r\n", fres);
+    }
+
+    DWORD free_clusters, free_sectors, total_sectors;
+
+    FATFS* getFreeFs;
+
+    fres = f_getfree("", &free_clusters, &getFreeFs);
+    if (fres != FR_OK) {
+	printf("f_getfree error (%i)\r\n", fres);
+      }
+
+  //Formula comes from ChaN's documentation
+    total_sectors = (getFreeFs->n_fatent - 2) * getFreeFs->csize;
+    free_sectors = free_clusters * getFreeFs->csize;
+
+    printf("SD card stats:\r\n %lu KiB total drive space.\r\n %lu KiB available.\r\n", total_sectors / 2, free_sectors / 2);
+    //textfile.txt eller snd.wav
+    fres = f_open(&fil, "snd.wav", FA_READ);
+    if (fres != FR_OK) {
+  	printf("f_open error (%i)\r\n");
+  	while(1);
+    }
+    printf("I was able to open file for reading!\r\n");
+
+  
+
 }
 
+void HAL_DAC_ConvHalfCpltCallbackCh1(DAC_HandleTypeDef *hdac)
+{
+ bufferState = 1;
+}
+
+
+void HAL_DAC_ConvCpltCallbackCh1(DAC_HandleTypeDef *hdac)
+{
+ bufferState = 2;
+}
 
 /* USER CODE END 4 */
 

@@ -52,6 +52,10 @@
   <ProjectSessionItem path="L4A1;L4A1;L4A1;Core"/>
   <ProjectSessionItem path="L4A1;L4A1;L4A1;Core;Inc"/>
   <ProjectSessionItem path="L4A1;L4A1;L4A1;Core;Src"/>
+  <ProjectSessionItem path="L4A1;L4A1;L4A1;Drivers"/>
+  <ProjectSessionItem path="L4A1;L4A1;L4A1;Drivers;STM32L4xx_HAL_Driver"/>
+  <ProjectSessionItem path="L4A1;L4A1;L4A1;Drivers;STM32L4xx_HAL_Driver;Inc"/>
+  <ProjectSessionItem path="L4A1;L4A1;L4A1;Drivers;STM32L4xx_HAL_Driver;Src"/>
   <ProjectSessionItem path="L4A1;L4A1;L4A1;FATFS"/>
   <ProjectSessionItem path="L4A1;L4A1;L4A1;FATFS;Target"/>
   <ProjectSessionItem path="L4A1;L4A1;L4A1;Middlewares"/>
@@ -100,7 +104,12 @@
  </TraceWindow>
  <Watch1>
   <Watches active="1" update="Twice a Second">
-   <Watchpoint expression="asendDMA" name="asendDMA" radix="16" linenumber="101" filename="L4A1/Core/Src/main.c"/>
+   <Watchpoint expression="asendDMA" name="asendDMA" radix="16" linenumber="107" filename="L4A1/Core/Src/main.c"/>
+   <Watchpoint expression="fres" name="fres" radix="16" linenumber="113" filename="L4A1/Core/Src/main.c"/>
+   <Watchpoint expression="total_sectors" name="total_sectors" radix="16" linenumber="127" filename="L4A1/Core/Src/main.c"/>
+   <Watchpoint expression="free_sectors" name="free_sectors" radix="16" linenumber="128" filename="L4A1/Core/Src/main.c"/>
+   <Watchpoint expression="csize" name="csize" radix="16" linenumber="127" filename="L4A1/Core/Src/main.c"/>
+   <Watchpoint expression="rres" name="rres" radix="-1" linenumber="118" filename="L4A1/Core/Src/main.c"/>
   </Watches>
  </Watch1>
  <Watch2>
@@ -113,25 +122,15 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="94" useTextEdit="1" path="L4A1/Core/Src/main.c" left="0" selected="1" top="79" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="14" y="121" useTextEdit="1" path="L4A1/Core/Src/main.c" left="0" selected="1" top="108" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="5" y="805" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/stm32l4xx_it.c" path="L4A1/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c" left="0" top="794" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="L4A1/Core/Src/usart.c" left="0" top="94" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="6" y="25" useTextEdit="1" path="L4A1/Core/Inc/usart.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="2889" useTextEdit="1" path="L4A1/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c" left="0" top="2876" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="59" useTextEdit="1" path="L4A1/Core/Inc/stm32l4xx_it.h" left="0" top="30" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="L4A1/Core/Inc/tim.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="40" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Core/Inc/spi.h" left="0" top="12" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="91" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Inc/stm32l4xx_it.h" path="L4A1/Core/Src/stm32l4xx_it.c" left="0" top="82" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="55" y="5831" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/stm32l4xx_it.c" path="L4A1/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c" left="0" top="5810" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="31" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Inc/spi.h" path="L4A1/Core/Src/spi.c" left="0" top="12" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="1906" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c" left="0" top="1887" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="28" y="318" useTextEdit="1" path="L4A1/FATFS/Target/user_diskio_spi.c" left="0" top="365" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/FATFS/Target/user_diskio_spi.c" path="L4A1/FATFS/Target/user_diskio_spi.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="33" y="152" useTextEdit="1" path="L4A1/FATFS/Target/user_diskio.c" left="0" top="137" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="81" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Core/Inc/main.h" left="0" top="54" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="21" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Middlewares/Third_Party/FatFs/src/integer.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="13" y="18" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Middlewares/Third_Party/FatFs/src/diskio.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="16" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Middlewares/Third_Party/FatFs/src/diskio.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="88" useTextEdit="1" path="L4A1/Core/Src/stm32l4xx_it.c" left="0" top="68" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="92" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Middlewares/Third_Party/FatFs/src/ff.h" left="0" top="53" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="3510" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/Core/Src/main.c" path="L4A1/Middlewares/Third_Party/FatFs/src/ff.c" left="0" top="3487" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="122" useTextEdit="1" path="L4A1/FATFS/Target/user_diskio.c" left="0" top="96" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="456" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4A1/L4A1/FATFS/Target/user_diskio.c" path="L4A1/FATFS/Target/user_diskio_spi.c" left="0" top="428" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="L4A1" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

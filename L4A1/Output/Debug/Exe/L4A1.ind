@@ -1,3 +1,4 @@
+"Output/Debug/Obj/L4A1/dac.o"
 "Output/Debug/Obj/L4A1/dma.o"
 "Output/Debug/Obj/L4A1/gpio.o"
 "Output/Debug/Obj/L4A1/main.o"
@@ -9,6 +10,8 @@
 "Output/Debug/Obj/L4A1/usart.o"
 "Output/Debug/Obj/L4A1/stm32l4xx_hal.o"
 "Output/Debug/Obj/L4A1/stm32l4xx_hal_cortex.o"
+"Output/Debug/Obj/L4A1/stm32l4xx_hal_dac.o"
+"Output/Debug/Obj/L4A1/stm32l4xx_hal_dac_ex.o"
 "Output/Debug/Obj/L4A1/stm32l4xx_hal_dma.o"
 "Output/Debug/Obj/L4A1/stm32l4xx_hal_dma_ex.o"
 "Output/Debug/Obj/L4A1/stm32l4xx_hal_exti.o"

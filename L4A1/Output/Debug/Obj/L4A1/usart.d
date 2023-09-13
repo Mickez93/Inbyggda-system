@@ -26,6 +26,8 @@ Output/Debug/Obj/L4A1/usart.o: \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h \
+  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac.h \
+  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac_ex.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h \
   /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4A1/L4A1/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h \
