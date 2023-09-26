@@ -1,0 +1,87 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBuffer>
+  <FrameBufferWindow width="0" keepAspectRatio="0" zoomToFitWindow="0" addressSpace="" format="0" height="0" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="L4B14_Debug" addressText="" accessByDisplayWidth="0"/>
+ </FrameBuffer>
+ <Memory1>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="1" columnsText="" refreshPeriod="0" name="L4B14_Debug" sizeText="" addressText="0x20000060"/>
+ </Memory1>
+ <Memory2>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="L4B14_Debug" sizeText="" addressText=""/>
+ </Memory2>
+ <Memory3>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="L4B14_Debug" sizeText="" addressText=""/>
+ </Memory3>
+ <Memory4>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="L4B14_Debug" sizeText="" addressText=""/>
+ </Memory4>
+ <Project>
+  <ProjectSessionItem path="L4B14"/>
+  <ProjectSessionItem path="L4B14;L4B14"/>
+  <ProjectSessionItem path="L4B14;L4B14;Include"/>
+  <ProjectSessionItem path="L4B14;L4B14;L4B14"/>
+  <ProjectSessionItem path="L4B14;L4B14;L4B14;Core"/>
+  <ProjectSessionItem path="L4B14;L4B14;L4B14;Core;Inc"/>
+  <ProjectSessionItem path="L4B14;L4B14;L4B14;Core;Src"/>
+ </Project>
+ <Register1>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="L4B14_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register1>
+ <Register2>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="L4B14_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register2>
+ <Register3>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="L4B14_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register3>
+ <Register4>
+  <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="L4B14_Debug" decimalNodes="" octalNodes="" unsignedNodes=""/>
+ </Register4>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Twice a Second">
+   <Watchpoint expression="btn2_task" name="btn2_task" radix="16" linenumber="297" filename="L4B14/Core/Src/freertos.c"/>
+   <Watchpoint expression="btn1_task" name="btn1_task" radix="16" linenumber="252" filename="L4B14/Core/Src/freertos.c"/>
+   <Watchpoint expression="std_task" name="std_task" radix="16" linenumber="162" filename="L4B14/Core/Src/freertos.c"/>
+  </Watches>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="92" useTextEdit="1" path="L4B14/Core/Src/main.c" left="0" selected="1" top="92" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="68" y="77" useTextEdit="1" path="L4B14/Makefile" left="0" top="77" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="11" y="406" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" left="1" top="397" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="233" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Src/freertos.c" left="0" top="210" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="33" useTextEdit="1" path="L4B14/Core/Inc/main.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="26" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Src/tim.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="26" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Src/usart.c" left="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Inc/adc.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="302" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="../../../.segger/SEGGER Embedded Studio/v3/packages/CMSIS_5/CMSIS/DSP/Include/arm_math_types.h" left="0" top="282" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="58" useTextEdit="1" path="Include/SEGGER.h" left="0" top="19" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="49" useTextEdit="1" path="L4B14/Core/Src/SEGGER_SYSVIEW_FreeRTOS.c" left="0" top="13" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="14" y="246" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/freertos.c" path="Include/SEGGER_SYSVIEW.h" left="0" top="246" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="84" y="152" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="Include/SEGGER_SYSVIEW_FreeRTOS.h" left="0" top="137" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="2540" useTextEdit="1" path="L4B14/Core/Src/SEGGER_SYSVIEW.c" left="0" top="2500" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="30" useTextEdit="1" path="L4B14/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h" left="0" top="9" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="98" useTextEdit="1" path="Include/SEGGER_SYSVIEW_Conf.h" left="0" top="65" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="Include/SEGGER_SYSVIEW_ConfDefaults.h" left="0" top="243" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="39" y="71" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/Include/SEGGER_SYSVIEW_FreeRTOS.h" path="L4B14/Core/Src/SEGGER_SYSVIEW_Config_FreeRTOS.c" left="0" top="66" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="66" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/SEGGER_SYSVIEW_Config_FreeRTOS.c" path="L4B14/Core/Inc/FreeRTOSConfig.h" left="0" top="51" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="96" useTextEdit="1" path="L4B14/Core/Src/stm32l4xx_it.c" left="0" top="81" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="L4B14" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
+</session>
