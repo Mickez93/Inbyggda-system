@@ -9,7 +9,7 @@
   <FrameBufferWindow width="0" keepAspectRatio="0" zoomToFitWindow="0" addressSpace="" format="0" height="0" autoEvaluate="0" scaleFactor="1" refreshPeriod="0" name="L4B14_Debug" addressText="" accessByDisplayWidth="0"/>
  </FrameBuffer>
  <Memory1>
-  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="1" columnsText="" refreshPeriod="0" name="L4B14_Debug" sizeText="" addressText="0x2000BEFF"/>
+  <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="1" columnsText="" refreshPeriod="0" name="L4B14_Debug" sizeText="" addressText="0x20000060"/>
  </Memory1>
  <Memory2>
   <MemoryWindow addressSpace="" dataSize="1" autoEvaluate="0" viewMode="0" viewType="4" addressOrder="0" columnsText="" refreshPeriod="0" name="L4B14_Debug" sizeText="" addressText=""/>
@@ -23,8 +23,10 @@
  <Project>
   <ProjectSessionItem path="L4B14"/>
   <ProjectSessionItem path="L4B14;L4B14"/>
+  <ProjectSessionItem path="L4B14;L4B14;Include"/>
   <ProjectSessionItem path="L4B14;L4B14;L4B14"/>
   <ProjectSessionItem path="L4B14;L4B14;L4B14;Core"/>
+  <ProjectSessionItem path="L4B14;L4B14;L4B14;Core;Inc"/>
   <ProjectSessionItem path="L4B14;L4B14;L4B14;Core;Src"/>
   <ProjectSessionItem path="L4B14;L4B14;L4B14;Middlewares"/>
   <ProjectSessionItem path="L4B14;L4B14;L4B14;Middlewares;Third_Party"/>
@@ -51,7 +53,11 @@
   <Trace enabled="Yes"/>
  </TraceWindow>
  <Watch1>
-  <Watches active="1" update="Never"/>
+  <Watches active="1" update="Twice a Second">
+   <Watchpoint expression="btn2_task" name="btn2_task" radix="16" linenumber="297" filename="L4B14/Core/Src/freertos.c"/>
+   <Watchpoint expression="btn1_task" name="btn1_task" radix="16" linenumber="252" filename="L4B14/Core/Src/freertos.c"/>
+   <Watchpoint expression="std_task" name="std_task" radix="16" linenumber="162" filename="L4B14/Core/Src/freertos.c"/>
+  </Watches>
  </Watch1>
  <Watch2>
   <Watches active="0" update="Never"/>
@@ -63,10 +69,19 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="142" useTextEdit="1" path="L4B14/Core/Src/main.c" left="0" selected="1" top="119" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="140" useTextEdit="1" path="L4B14/Makefile" left="0" top="105" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="40" y="473" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" left="13" top="457" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="152" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Src/freertos.c" left="0" top="143" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="92" useTextEdit="1" path="L4B14/Core/Src/main.c" left="0" top="32" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="68" y="77" useTextEdit="1" path="L4B14/Makefile" left="0" top="77" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="11" y="406" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" left="1" top="397" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="234" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Src/freertos.c" left="0" top="234" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="33" useTextEdit="1" path="L4B14/Core/Inc/main.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="26" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Src/tim.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="26" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Src/usart.c" left="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="L4B14/Core/Inc/adc.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="302" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/main.c" path="../../../.segger/SEGGER Embedded Studio/v3/packages/CMSIS_5/CMSIS/DSP/Include/arm_math_types.h" left="0" top="282" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="58" useTextEdit="1" path="Include/SEGGER.h" left="0" top="19" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="99" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/SEGGER_SYSVIEW.c" path="Include/SEGGER_SYSVIEW_Conf.h" left="0" selected="1" top="70" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="171" useTextEdit="1" path="L4B14/Core/Src/stm32l4xx_it.c" left="0" top="155" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="1995" useTextEdit="1" openedFrom="/home/micke/Documents/SEGGER Embedded Studio for ARM Projects/L4B14/L4B14/Core/Src/stm32l4xx_it.c" path="L4B14/Core/Src/SEGGER_SYSVIEW.c" left="0" top="1972" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="L4B14" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="L4B14" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

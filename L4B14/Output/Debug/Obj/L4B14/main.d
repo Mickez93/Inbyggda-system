@@ -76,6 +76,14 @@ Output/Debug/Obj/L4B14/main.o: \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Core/Inc/FreeRTOSConfig.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/SEGGER_SYSVIEW_FreeRTOS.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/SEGGER_SYSVIEW.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/SEGGER.h \
+ /usr/share/segger_embedded_studio_for_arm_7.30/include/stdarg.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/Global.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/SEGGER_SYSVIEW_ConfDefaults.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/SEGGER_SYSVIEW_Conf.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/SEGGER_RTT_Conf.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
  /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \

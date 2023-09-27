@@ -35,7 +35,7 @@
       arm_target_interface_type="SWD"
       c_preprocessor_definitions="ARM_MATH_CM4;STM32L432xx;__STM32L432_SUBFAMILY;__STM32L4XX_FAMILY"
       c_preprocessor_undefinitions="__FPU_PRESENT"
-      c_user_include_directories="$(ProjectDir)/CMSIS_5/CMSIS/Core/Include;$(ProjectDir)/L4B14/Core/Inc;$(ProjectDir)/L4B14/Drivers/STM32L4xx_HAL_Driver/Inc;$(ProjectDir)/L4B14/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;$(ProjectDir)/L4B14/Drivers/CMSIS/Device/ST/STM32L4xx/Include;$(ProjectDir)/L4B14/Drivers/CMSIS/Include;$(ProjectDir)/L4B14/Middlewares/Third_Party/FreeRTOS/Source/include;$(ProjectDir)/L4B14/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;$(ProjectDir)/L4B14/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"
+      c_user_include_directories="$(ProjectDir)/CMSIS_5/CMSIS/Core/Include;$(ProjectDir)/L4B14/Core/Inc;$(ProjectDir)/L4B14/Drivers/STM32L4xx_HAL_Driver/Inc;$(ProjectDir)/L4B14/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;$(ProjectDir)/L4B14/Drivers/CMSIS/Device/ST/STM32L4xx/Include;$(ProjectDir)/L4B14/Drivers/CMSIS/Include;$(ProjectDir)/L4B14/Middlewares/Third_Party/FreeRTOS/Source/include;$(ProjectDir)/L4B14/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;$(ProjectDir)/L4B14/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;$(ProjectDir)/Include"
       debug_register_definition_file="$(ProjectDir)/STM32L4x2_Registers.xml"
       debug_stack_pointer_start="__stack_end__"
       debug_start_from_entry_point_symbol="Yes"
@@ -59,6 +59,12 @@
           default_const_section=".init_rodata" />
       </file>
     </folder>
+    <folder
+      Name="Include"
+      exclude=""
+      filter=""
+      path="Include"
+      recurse="Yes" />
     <folder Name="L4B14" exclude="" filter="" path="L4B14" recurse="Yes" />
     <folder Name="Script Files">
       <file file_name="STM32L4xx/Scripts/STM32L4xx_Target.js">

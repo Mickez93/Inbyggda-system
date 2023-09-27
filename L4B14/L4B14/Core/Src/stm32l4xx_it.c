@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32l4xx_it.h"
+#include "SEGGER_SYSVIEW_Conf.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -168,11 +169,11 @@ void DebugMon_Handler(void)
 void DMA1_Channel1_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
-
+  SEGGER_SYSVIEW_RecordEnterISR();
   /* USER CODE END DMA1_Channel1_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_adc1);
   /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
-
+   SEGGER_SYSVIEW_RecordExitISR();
   /* USER CODE END DMA1_Channel1_IRQn 1 */
 }
 
@@ -182,11 +183,11 @@ void DMA1_Channel1_IRQHandler(void)
 void TIM1_BRK_TIM15_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_BRK_TIM15_IRQn 0 */
-
+  SEGGER_SYSVIEW_RecordEnterISR();
   /* USER CODE END TIM1_BRK_TIM15_IRQn 0 */
   HAL_TIM_IRQHandler(&htim15);
   /* USER CODE BEGIN TIM1_BRK_TIM15_IRQn 1 */
-
+  SEGGER_SYSVIEW_RecordExitISR();
   /* USER CODE END TIM1_BRK_TIM15_IRQn 1 */
 }
 
@@ -196,11 +197,11 @@ void TIM1_BRK_TIM15_IRQHandler(void)
 void TIM1_UP_TIM16_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_UP_TIM16_IRQn 0 */
-
+  SEGGER_SYSVIEW_RecordEnterISR();
   /* USER CODE END TIM1_UP_TIM16_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
   /* USER CODE BEGIN TIM1_UP_TIM16_IRQn 1 */
-
+  SEGGER_SYSVIEW_RecordExitISR();
   /* USER CODE END TIM1_UP_TIM16_IRQn 1 */
 }
 
@@ -210,11 +211,11 @@ void TIM1_UP_TIM16_IRQHandler(void)
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
-
+SEGGER_SYSVIEW_RecordEnterISR();
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
-
+  SEGGER_SYSVIEW_RecordExitISR();
   /* USER CODE END TIM2_IRQn 1 */
 }
 

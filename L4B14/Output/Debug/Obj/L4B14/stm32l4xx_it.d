@@ -73,4 +73,5 @@ Output/Debug/Obj/L4B14/stm32l4xx_it.o: \
  /home/micke/.segger/SEGGER\ Embedded\ Studio/v3/packages/CMSIS_5/CMSIS/DSP/Include/dsp/filtering_functions.h \
  /home/micke/.segger/SEGGER\ Embedded\ Studio/v3/packages/CMSIS_5/CMSIS/DSP/Include/dsp/support_functions.h \
  /home/micke/.segger/SEGGER\ Embedded\ Studio/v3/packages/CMSIS_5/CMSIS/DSP/Include/dsp/quaternion_math_functions.h \
- /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Core/Inc/stm32l4xx_it.h
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/L4B14/Core/Inc/stm32l4xx_it.h \
+ /home/micke/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/L4B14/Include/SEGGER_SYSVIEW_Conf.h
